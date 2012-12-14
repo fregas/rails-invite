@@ -1,0 +1,18 @@
+
+<h3>Craig Is Graduating!</h3>
+
+<p>
+  Are you in <%= @invitee.full_name %>?
+</p>
+
+<%= form_for(@invitee) do |f| %>
+  <%= f.hidden_field :answer_id %>
+  <div class="answer">
+    <% @answers.each do |a| %>
+      <a href="#" answer_id="<%= a.id %>" ><%= a.name %></a> 
+    <% end %>
+  </div>
+<% end %>
+
+
+

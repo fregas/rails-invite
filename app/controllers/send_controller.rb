@@ -6,7 +6,7 @@ class SendController < ApplicationController
 
   def submit
     @invitees.each do |i|
-      url = "#{request.protocol}#{request.host_with_port}/#{i.unique_id}"
+      url = "#{request.protocol}#{request.host_with_port}/?id=#{i.unique_id}"
       InviteeMailer.invitation_email(i,url).deliver()
       i.sent_invite_at = Time.new
       #i.save
