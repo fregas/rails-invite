@@ -1,0 +1,16 @@
+
+<h3>Will send to...</h3>
+
+
+<%= form_tag('/send/submit') do %>
+  <% @invitees.each do |i| %>
+
+  <li>
+    <%= i.last_name %>, <%= i.first_name %> - <%= i.email %>
+  </li>
+
+  <% end %>
+  <%= submit_tag %>
+
+<% end %>
+

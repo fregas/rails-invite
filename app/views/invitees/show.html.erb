@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @invitee.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @invitee.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @invitee.email %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%= @invitee.answer_id %>
+</p>
+
+<p>
+  <b>Guests:</b>
+  <%= @invitee.guests %>
+</p>
+
+<p>
+  <b>Sent invite at:</b>
+  <%= @invitee.sent_invite_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_invitee_path(@invitee) %> |
+<%= link_to 'Back', invitees_path %>
