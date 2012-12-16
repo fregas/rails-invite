@@ -1,17 +1,32 @@
 
-<h3>Craig Is Graduating!</h3>
+<h3>Craig Is Graduating Pary!</h3>
+<h4>When: January 12th 2013 5pm - 10pm</h4>
+<h4>Where: Craig and Tricia's House</h4>
+<h4>Contact:
+<br />
+3101 Florian Lane Fort Worth, TX
+<br />
+817-975-1862 or 817-975-1178
+<h4>
 
 <p>
-  Are you in <%= @invitee.full_name %>?
+   <%= @invitee.full_name %> are you in?
 </p>
 
 <%= form_for(@invitee) do |f| %>
   <%= f.hidden_field :answer_id %>
   <div class="answer">
     <% @answers.each do |a| %>
-      <a href="#" answer_id="<%= a.id %>" ><%= a.name %></a> 
+      <a href="#" answer_id="<%= a.id %>">
+        <%= image_tag '/images/'+ a.name + '.jpeg' %>
+      &nbsp;
+      <%= a.name %>
+      </a> &nbsp;
     <% end %>
   </div>
+  <p>
+  <%= text_area_tag :comment, '', { :rows => 5, :cols => 40 } %>
+  </p>
 <% end %>
 
 
