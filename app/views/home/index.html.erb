@@ -1,5 +1,12 @@
 
-<h3>Craig Is Graduating Pary!</h3>
+<h2>Responses</h2>
+
+<div id="all_answers">
+</div>
+
+
+<%= content_for :right do %>
+<h2>Craig's Graduation Party!</h2>
 <h4>When: January 12th 2013 5pm - 10pm</h4>
 <h4>Where: Craig and Tricia's House</h4>
 <h4>Contact:
@@ -7,26 +14,43 @@
 3101 Florian Lane Fort Worth, TX
 <br />
 817-975-1862 or 817-975-1178
-<h4>
 
-<p>
-   <%= @invitee.full_name %> are you in?
-</p>
+<br /><br />
+<div id="response_div">
+  <h2>
+     <%= @invitee.full_name %> are you in?
+  </h2>
 
-<%= form_for(@invitee) do |f| %>
-  <%= f.hidden_field :answer_id %>
-  <div class="answer">
-    <% @answers.each do |a| %>
-      <a href="#" answer_id="<%= a.id %>">
-        <%= image_tag '/images/'+ a.name + '.jpeg' %>
-      &nbsp;
-      <%= a.name %>
-      </a> &nbsp;
-    <% end %>
-  </div>
-  <p>
-  <%= text_area_tag :comment, '', { :rows => 5, :cols => 40 } %>
-  </p>
+  <%= form_for(@invitee, :url => '/home/submit', :html => { :id =>'answer_form' } ) do |f| %>
+    <%= hidden_field_tag :id, @invitee.unique_id %>
+    <%= f.hidden_field :answer_id %>
+    <div class="answer">
+      <% @answers.each do |a| %>
+        <a href="#" answer_id="<%= a.id %>">
+          <%= image_tag '/images/'+ a.name + '.jpeg' %>
+          &nbsp;
+          <%= a.name %>
+        </a> &nbsp;
+      <% end %>
+    </div>
+    
+    <p>
+    <strong># of Guests:</strong>
+    <%= f.text_field :guests, :style => 'width: 50px' %>
+    <br />
+    <strong>Comments:</strong></br>
+    <%= text_area_tag :message, '', { :rows => 5, :cols => 40 } %>
+    </p>
+    <%= submit_tag 'Submit Response' %>
+  <% end %>
+
+</div>
+
+<div id="thanks_div">
+  <h2>Thanks for letting us know!<h2>
+</div>
+
+
 <% end %>
 
 

@@ -6,6 +6,16 @@ class HomeController < ApplicationController
   end
 
   def submit
+    @invitee.update_attributes params[:invitee]
+    @invitee.save
+    @invitee.responses << Response.new(:message => params[:message] ) if params[:message].present?
+    
+    render :text => 'success'
+  end
+
+  def show_responses
+    @responses = Response.all
+    render :layout => nil    
   end
 
   private 

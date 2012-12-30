@@ -22,6 +22,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+#gem 'timespan'
+
 #gem 'omniauth-facebook'
 
 
