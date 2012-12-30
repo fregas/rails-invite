@@ -33,12 +33,11 @@ namespace :deploy do
 
   task :link_files do
     #run "rm -Rf #{current_path}/files"
-    #run "ln -nfs #{deploy_to}shared/videos/html5/ #{current_path}/public/videos/html5"
+    run "ln -nfs #{deploy_to}shared/development.sqlite3 #{current_path}/db/development.sqlite3"
     #run "ln -nfs #{deploy_to}shared/videos/flash/ #{current_path}/public/videos/flash"
   end
 end
 
-#after("deploy:create_symlink", "deploy:link_files")
-
+after "deploy:create_symlink", "deploy:link_files"
 after "deploy", "deploy:cleanup"
 after "deploy:migrate", "deploy:cleanup"
