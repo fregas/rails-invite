@@ -1,11 +1,11 @@
 
 set :use_sudo, false 
-set :user, 'fregas'
-set :password, 'unferth1!'
-set :domain, '204.74.221.82'
+set :user, 'craigbowes'
+set :password, 'shamino!'
+set :domain, '184.106.67.131'
 
 set :deploy_via, :remote_cache
-set :deploy_to, "/home/fregas/apps/craigisgraduating/"
+set :deploy_to, "/home/craigbowes/craigisgraduating/"
 
 #set :chmod755, "app config db lib public vendor script script/* public/disp*"
 #set :group_writable, false
