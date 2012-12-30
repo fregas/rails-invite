@@ -6,65 +6,64 @@
 
 
 <%= content_for :right do %>
-<h2>Craig's Graduation Party!</h2>
-<h4>When: January 12th 2013 5pm - 10pm</h4>
-<h4>Where: Craig and Tricia's House</h4>
-3101 Florian Lane Fort Worth, TX  76108
-<br />
-817-975-1862 or 817-975-1178
-<br />
-<a href="http://goo.gl/maps/x4lr2" target="_blank">Click here for a map</a>
-</p>
-
-<p>
-
-  Come celebrate Craig's Graduation.  The 21 year plan finally worked!   
-  Food and drinks will be provided.  Graduation presents are not required but feel free to bring your 
-  favorite liquor.  Since alcohol will be served, we respectfully request no children.  Please RSVP as soon
-  as possible using the form below or call the number above if you run into problems.  
-</p>
-
-<% if @invitee.present? %>
-<div id="response_div">
-  <h2>
-     <%= @invitee.full_name %> are you in?
-  </h2>
-
-  <%= form_for(@invitee, :url => '/home/submit', :html => { :id =>'answer_form' } ) do |f| %>
-    <%= hidden_field_tag :id, @invitee.unique_id %>
-    <%= f.hidden_field :answer_id %>
-    <div class="answer">
-      
-      <% @answers.each do |a| %>
-        <div class="answer-item" answer_id="<%= a.id %>">
-        <a href="#" answer_id="<%= a.id %>">
-          <%= image_tag '/images/'+ a.name.downcase + '.jpeg' %>
-          &nbsp;
-          <%= a.name %>
-        </a> &nbsp;
-        </div>
-      <% end %>
-    </div>
-    
-    <p>
-    <strong># of Guests (including yourself):</strong>
-    <%= f.text_field :guests, :style => 'width: 50px' %>
-    <br />
-    <strong>Comments:</strong></br>
-    <%= text_area_tag :message, '', { :rows => 5, :cols => 40 } %>
-    </p>
-    <%= submit_tag 'Submit Response', {:id => 'submit_button'} %>
-  <% end %>
-
-</div>
-
-<div id="thanks_div">
-  <h2>Thanks for letting us know!</h2>
+  <h2>Craig's Graduation Party!</h2>
+  <h4>When: January 12th 2013 5pm - 10pm</h4>
+  <h4>Where: Craig and Tricia's House</h4>
+  3101 Florian Lane Fort Worth, TX  76108
   <br />
-  <%= image_tag '/images/craig_tron.jpg' %>
-</div>
+  817-975-1862 or 817-975-1178
+  <br />
+  <a href="http://goo.gl/maps/x4lr2" target="_blank">Click here for a map</a>
+  </p>
 
-<% end %>
+  <p>
+
+    Come celebrate Craig's Graduation.  The 21 year plan finally worked!   
+    Food and drinks will be provided.  Graduation presents are not required but feel free to bring your 
+    favorite liquor.  Since alcohol will be served, we respectfully request no children.  Please RSVP as soon
+    as possible using the form below or call the number above if you run into problems.  
+  </p>
+
+  <% if @invitee.present? %>
+  <div id="response_div">
+    <h2>
+       <%= @invitee.full_name %> are you in?
+    </h2>
+
+    <%= form_for(@invitee, :url => '/home/submit', :html => { :id =>'answer_form' } ) do |f| %>
+      <%= hidden_field_tag :id, @invitee.unique_id %>
+      <%= f.hidden_field :answer_id %>
+      <div class="answer">
+        
+        <% @answers.each do |a| %>
+          <div class="answer-item" answer_id="<%= a.id %>">
+          <a href="#" answer_id="<%= a.id %>">
+            <%= image_tag '/images/'+ a.name.downcase + '.jpeg' %>
+            &nbsp;
+            <%= a.name %>
+          </a> &nbsp;
+          </div>
+        <% end %>
+      </div>
+      
+      <p>
+      <strong># of Guests (including yourself):</strong>
+      <%= f.text_field :guests, :style => 'width: 50px' %>
+      <br />
+      <strong>Comments:</strong></br>
+      <%= text_area_tag :message, '', { :rows => 5, :cols => 40 } %>
+      </p>
+      <%= submit_tag 'Submit Response', {:id => 'submit_button'} %>
+    <% end %>
+
+  </div>
+
+  <div id="thanks_div">
+    <h2>Thanks for letting us know!</h2>
+    <br />
+  </div>
+
+  <% end %>
 <% end %>
 
 
