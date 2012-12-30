@@ -1,8 +1,8 @@
 
 set :use_sudo, false 
 set :user, 'craigbowes'
-set :password, 'shamino!'
-set :domain, '184.106.67.131'
+set :password, 'shamino1!'
+set :domain, 'enilon.com'
 
 set :deploy_via, :remote_cache
 set :deploy_to, "/home/craigbowes/craigisgraduating/"
