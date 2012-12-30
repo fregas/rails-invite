@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   def submit
     @invitee.update_attributes params[:invitee]
     @invitee.save
-    @invitee.responses << Response.new(:message => params[:message] ) if params[:message].present?
+    @invitee.responses << Response.new(:message => params[:message] ) if params[:message].present? || @invitee.responses.count === 0
     
     render :text => 'success'
   end
