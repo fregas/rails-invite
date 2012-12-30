@@ -29,6 +29,7 @@
     <h2>
        <%= @invitee.full_name %> are you in?
     </h2>
+  <p>Click on Yes, No or Maybe and click "Submit Response"</p>
 
     <%= form_for(@invitee, :url => '/home/submit', :html => { :id =>'answer_form' } ) do |f| %>
       <%= hidden_field_tag :id, @invitee.unique_id %>
