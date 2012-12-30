@@ -2,9 +2,9 @@
 <% @responses.each do |resp| %>
 <div class="response_item">
  
-
+  <%= image_tag '/images/'+ resp.invitee.answer.name + '.jpeg', :class => 'response_small'%> 
   <strong class="full_name"><%= resp.invitee.full_name %></strong> replied: 
-   <%= image_tag '/images/'+ resp.invitee.answer.name + '.jpeg', :class => 'response_small'%> <%= resp.invitee.answer.name %> 
+   <%= resp.invitee.answer.name %> 
    &nbsp;&nbsp;  on <span class="date"><%= resp.updated_at.to_formatted_s(:short) %></span>
   <br />Guests: <%= resp.invitee.guests %>
   <br />

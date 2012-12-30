@@ -3,8 +3,8 @@ $(function() {
   $(".answer a").click(function(e) {
     var answer_id = $(e.currentTarget).attr('answer_id');
     $('#invitee_answer_id').val(answer_id);
-    $('div.answer a').css('border-color','transparent');
-    $(e.currentTarget).css('border-color','black');
+    $('div.answer-item').css('border-color','transparent');
+    $(e.currentTarget).parent().css('border-color','black');
 
     return false;  
   });
