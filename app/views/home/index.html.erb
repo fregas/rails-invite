@@ -38,7 +38,7 @@
       <% @answers.each do |a| %>
         <div class="answer-item" answer_id="<%= a.id %>">
         <a href="#" answer_id="<%= a.id %>">
-          <%= image_tag '/images/'+ a.name + '.jpeg' %>
+          <%= image_tag '/images/'+ a.name.downcase + '.jpeg' %>
           &nbsp;
           <%= a.name %>
         </a> &nbsp;
