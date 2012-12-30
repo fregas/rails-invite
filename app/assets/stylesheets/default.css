@@ -400,8 +400,8 @@ div.answer { vertical-align: middle; }
 div.answer a { text-decoration:none; font-size:12pt; border:3px solid transparent; padding 4 4 4 4; }
 div.answer a img { height:30px; }
 
-div#thanks_div { background-color: #F1F2E9; display:none; font-size: 14pt; width: 400px;}
-div#thanks_div h2 {color:green; padding:8px 8px 8px 8px}
+div#thanks_div {  display:none; font-size: 14pt; width: 400px;}
+div#thanks_div h2 {color:green; padding:8px 8px 8px 8px; background-color: #F1F2E9;}
 div.answer-item {height:35px; border: 1px solid transparent; display:inline-block; padding:5px;}
 
 img.response_small { width: 20px; }

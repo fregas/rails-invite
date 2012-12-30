@@ -53,13 +53,15 @@
     <strong>Comments:</strong></br>
     <%= text_area_tag :message, '', { :rows => 5, :cols => 40 } %>
     </p>
-    <%= submit_tag 'Submit Response' %>
+    <%= submit_tag 'Submit Response', {:id => 'submit_button'} %>
   <% end %>
 
 </div>
 
 <div id="thanks_div">
-  <h2>Thanks for letting us know!<h2>
+  <h2>Thanks for letting us know!</h2>
+  <br />
+  <%= image_tag '/images/craig_tron.jpg' %>
 </div>
 
 <% end %>

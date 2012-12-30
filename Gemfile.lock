@@ -30,19 +30,16 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     builder (3.0.4)
-    chunky_png (1.2.6)
-    compass (0.13.alpha.0)
-      chunky_png (~> 1.2)
-      fssm (>= 0.2.7)
-      sass (~> 3.2.0.alpha.93)
-    compass-960-plugin (0.10.4)
-      compass (>= 0.10.0)
-    compass-rails (1.0.3)
-      compass (>= 0.12.2, < 0.14)
+    coffee-rails (3.2.2)
+      coffee-script (>= 2.2.0)
+      railties (~> 3.2.0)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.4.0)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    fssm (0.2.9)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -109,10 +106,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  compass (~> 0.12.rc.0)
-  compass-960-plugin
-  compass-rails
-  execjs
+  coffee-rails (~> 3.2.1)
   jquery-rails
   json
   rails (= 3.2.1)
