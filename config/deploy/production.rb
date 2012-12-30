@@ -15,23 +15,12 @@ role :app, domain
 role :web, domain
 role :db, domain, :primary => true
 
-namespace(:customs) do
-  task :symlink_gems, :roles => :app do
-    run <<-CMD
-      ln -fs  #{deploy_to}shared/gems #{deploy_to}current/vendor/gems
-    CMD
-    # ln -nfs /home/fregas/apps/reviewsome/shared/gems/ /home/fregas/apps/reviewsome/current/vendor/gems/
-    #                                                   /home/fregas/apps/reviewsome/current/vendor/gems/
-  end
 
-  task :bundler, :roles => :app do
-    run <<-CMD
-      bundle install --gemfile #{deploy_to}current/Gemfile --path #{deploy_to}shared/gems/
-    CMD
-  end
+task :link_files do
+  run "ln -nfs #{deploy_to}/shared/development.sqlite3 #{current_path}/db/development.sqlite3"
 end
 
-#after "deploy:symlink","customs:symlink_gems"
+after "deploy:symlink","link_files"
 #after "deploy:symlink", "customs:bundler"
 
 
