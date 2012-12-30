@@ -9,7 +9,7 @@ class SendController < ApplicationController
       url = "#{request.protocol}#{request.host_with_port}/?id=#{i.unique_id}"
       InviteeMailer.invitation_email(i,url).deliver()
       i.sent_invite_at = Time.new
-      #i.save
+      i.save
     end
 
     redirect_to '/send'
