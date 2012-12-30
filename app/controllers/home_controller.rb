@@ -14,7 +14,7 @@ class HomeController < ApplicationController
   end
 
   def show_responses
-    @responses = Response.all
+    @responses = Response.all(:order => 'created_at DESC')
     render :layout => nil    
   end
 
