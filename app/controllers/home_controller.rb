@@ -21,6 +21,7 @@ class HomeController < ApplicationController
   private 
   def get_data
     @invitee = Invitee.find_by_unique_id params[:id]
+    @invitee.last_viewed_at = Time.now unless @invitee.nil?
     @answers = Answer.all
   end
 
