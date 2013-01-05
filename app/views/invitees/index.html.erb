@@ -8,6 +8,8 @@
     <th>Answer</th>
     <th>Guests</th>
     <th>Sent invite at</th>
+    <th>Viewed at</th>
+
     <th></th>
     <th></th>
     <th></th>
@@ -18,9 +20,10 @@
     <td><%= invitee.first_name %></td>
     <td><%= invitee.last_name %></td>
     <td><%= invitee.email %></td>
-    <td><%= invitee.answer_id %></td>
+    <td><%= invitee.answer.name %></td>
     <td><%= invitee.guests %></td>
     <td><%= invitee.sent_invite_at %></td>
+    <td><%= invitee.last_viewed_at %></td>
     <td><%= link_to 'Show', invitee %></td>
     <td><%= link_to 'Edit', edit_invitee_path(invitee) %></td>
     <td><%= link_to 'Destroy', invitee, :confirm => 'Are you sure?', :method => :delete %></td>
