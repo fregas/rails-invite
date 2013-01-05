@@ -20,7 +20,7 @@
     <td><%= invitee.first_name %></td>
     <td><%= invitee.last_name %></td>
     <td><%= invitee.email %></td>
-    <td><%= invitee.answer.name %></td>
+    <td><%= invitee.answer.nil? ? '' : invitee.answer.name %></td>
     <td><%= invitee.guests %></td>
     <td><%= invitee.sent_invite_at %></td>
     <td><%= invitee.last_viewed_at %></td>
